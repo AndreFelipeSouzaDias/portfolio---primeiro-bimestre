@@ -1,0 +1,127 @@
+/* CSS compartilhado para o portfólio */
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #0f1724;
+  --header: #020508;
+  --link: #81d1ff;
+  --link-hover: #ffffff;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--header);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: 700;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav a {
+  position: relative;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--link);
+  font-weight: 600;
+}
+
+nav a:not(:last-child) {
+  margin-right: 8px;
+  padding-right: 12px;
+  border-right: 1px solid var(--border);
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+.container {
+  max-width: 960px;
+  margin: 28px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 36, 0.04);
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-item {
+  width: calc(33.333% - 8px);
+  min-width: 180px;
+}
+
+.project-item img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.footer {
+  text-align: center;
+  color: rgba(15, 23, 36, 0.6);
+  margin-top: 18px;
+  padding: 18px 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 740px) {
+  .project-item {
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+}
